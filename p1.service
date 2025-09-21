@@ -1,0 +1,13 @@
+[Unit]
+Description=CS454 Project 1 service
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/project1
+ExecStart=/usr/bin/node /home/ec2-user/project1/server.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
