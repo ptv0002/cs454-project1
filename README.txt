@@ -37,9 +37,13 @@ curl -v "http://3.21.28.63:8080/convert"
 curl -v "http://3.21.28.63:8080/convert?lbs=-5"
 curl -v "http://3.21.28.63:8080/convert?lbs=NaN"
 
+Security & Cost Hygiene
+SSH Access: Limited to my IP address in Security Group rules
+Non-root Execution: Service runs under non-privileged ec2-user account
+Log Management: Service logs managed through systemd journaling
+Cost Control: Instance will be terminated after grading; key pair will be deleted
+
 Cleanup
-I followed the 4 rules listed in the assignment:
-1 Limit SSH to your IP in the Security Group; consider changing the key after the project.
-2 Don’t run as root; keep service under a non-privileged user.
-3 Rotate logs or cap size (e.g., logrotate or pm2 if used).
-4 Stop or terminate the instance when finished; delete orphaned EBS volumes and Key Pairs
+Instance will be terminated via AWS Console after project evaluation
+Associated EBS volumes will be automatically deleted upon termination
+Key pair will be deleted from AWS accoun
