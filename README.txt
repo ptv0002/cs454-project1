@@ -36,3 +36,10 @@ curl "http://3.21.28.63:8080/convert?lbs=0.1"
 curl -v "http://3.21.28.63:8080/convert"
 curl -v "http://3.21.28.63:8080/convert?lbs=-5"
 curl -v "http://3.21.28.63:8080/convert?lbs=NaN"
+
+Cleanup
+I followed the 4 rules listed in the assignment:
+1 Limit SSH to your IP in the Security Group; consider changing the key after the project.
+2 Don’t run as root; keep service under a non-privileged user.
+3 Rotate logs or cap size (e.g., logrotate or pm2 if used).
+4 Stop or terminate the instance when finished; delete orphaned EBS volumes and Key Pairs
