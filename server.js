@@ -37,7 +37,7 @@ app.get('/convert', (req, res) => {
     });
 });
 
-// Start the server on port 80
+// Start the server on port 8080
 const port = 8080;
 app.listen(port, () => {
     console.log(`CS454 Unit Converter service listening on port ${port}`);
