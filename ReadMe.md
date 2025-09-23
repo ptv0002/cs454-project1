@@ -47,6 +47,6 @@ Log Management: Service logs managed through systemd journaling
 Cost Control: Instance will be terminated after grading; key pair will be deleted
 
 ## Cleanup
-Instance will be terminated via AWS Console after project evaluation
-Associated EBS volumes will be automatically deleted upon termination
-Key pair will be deleted from AWS account
+* Instance will be terminated via AWS Console after project evaluation
+* Associated EBS volumes will be automatically deleted upon termination
+* Key pair will be deleted from AWS account
