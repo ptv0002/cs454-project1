@@ -49,4 +49,4 @@ Cost Control: Instance will be terminated after grading; key pair will be delete
 ## Cleanup
 Instance will be terminated via AWS Console after project evaluation
 Associated EBS volumes will be automatically deleted upon termination
-Key pair will be deleted from AWS accoun
+Key pair will be deleted from AWS account
