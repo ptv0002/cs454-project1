@@ -7,23 +7,16 @@ app.use(morgan('combined'));
 
 // The core conversion endpoint
 app.get('/convert', (req, res) => {
-    //Check if the 'lbs' parameter exists and is a valid number
-    if (req.query.lbs === undefined) {
-        return res.status(400).json({ error: 'Query param lbs is required' });
-    }
-
     const lbs = Number(req.query.lbs);
 
-    if (Number.isNaN(lbs)) {
-        return res.status(400).json({ error: 'Query param lbs must be a number' });
+    // Missing param or not a number → 400
+    if (req.query.lbs === undefined || Number.isNaN(lbs)) {
+        return res.status(400).json({ error: 'Query param lbs is required and must be a number' });
     }
 
-    // Check if the number is non-negative
-    if (!Number.isFinite(lbs)) {
-        return res.status(422).json({ error: 'lbs must be a finite number' });
-    }
-    if (lbs < 0) {
-        return res.status(422).json({ error: 'lbs must be a non-negative number' });
+    // Negative or non-finite → 422
+    if (!Number.isFinite(lbs) || lbs < 0) {
+        return res.status(422).json({ error: 'lbs must be a non-negative, finite number' });
     }
 
     // Perform the conversion
@@ -37,8 +30,8 @@ app.get('/convert', (req, res) => {
     });
 });
 
-// Start the server on port 8080
-const port = 8080;
+// Start the server (with env support)
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log(`CS454 Unit Converter service listening on port ${port}`);
 });
