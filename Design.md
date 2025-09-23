@@ -7,7 +7,7 @@ This project implements a RESTful web service for weight conversion following a 
 ## Technology Selection Justification
 
 ### Runtime Environment: Node.js
-Selected Node.js for its non-blocking, event-driven architecture that efficiently handles concurrent API requests. The lightweight nature of Node.js makes it ideal for simple REST services where minimal overhead is desired. The built-in HTTP module provides sufficient functionality for our basic requirements, while the npm ecosystem offers reliable middleware packages.
+Node.js was selected for its event-driven architecture that efficiently handles concurrent API requests. The lightweight nature of Node.js makes it ideal for simple REST services. The built-in HTTP module provides sufficient functionality for our basic requirements, while the npm ecosystem offers reliable middleware packages.
 
 ### Web Framework: Express.js
 Express.js was chosen over alternatives like Koa or Fastify due to its simplicity, extensive documentation, and middleware support. For this project, we specifically utilize:
@@ -16,7 +16,7 @@ Express.js was chosen over alternatives like Koa or Fastify due to its simplicit
 - **JSON parsing:** Built-in Express JSON middleware
 
 ### Cloud Platform: AWS EC2
-AWS EC2 provides the infrastructure-as-a-service foundation for this project. The t2.micro instance type was selected specifically for its free tier eligibility, providing cost-effective computing resources while meeting the performance requirements of a lightweight conversion service.
+AWS EC2 provides the infrastructure-as-a-service foundation for this project. The t3.micro instance type was selected specifically for its free tier eligibility, providing cost-effective computing resources while meeting the performance requirements of a lightweight conversion service.
 
 ### Operating System: Amazon Linux 2023
 Amazon Linux 2023 offers several advantages for this deployment:
@@ -96,7 +96,7 @@ Comprehensive error handling implemented with appropriate HTTP status codes:
 ## Deployment and Operations
 
 ### Infrastructure as Code Approach
-While primarily using AWS Console for this educational project, the design follows infrastructure-as-code principles:
+While primarily using AWS Console for this project, the design follows infrastructure-as-code principles:
 
 **Reproducible Deployment:**
 - Documented step-by-step provisioning process
